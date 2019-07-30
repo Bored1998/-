@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			ul{
+				list-style: none;
+			}
+			.smallBox{
+				width: 800px;
+				height: 550px;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-top: -275px;
+				margin-left: -400px;
+				background: white;
+				border: 1px solid red;
+				border-radius: 10px;
+				/* display: none; */
+			}
+			.list{
+				width: 720px;
+				height: 324px;
+				padding-left: 80px;
+			}
+			.list2{
+				height: 300px;
+			}
+			h3{
+				height: 70px;
+				text-align: center;
+				line-height: 70px;
+				font-size: 24px;
+				color: #495056;
+				font-weight: 500;
+			}
+			h2{
+				width: 738px;
+				height: 130px;
+				line-height: 130px;
+				font-size: 30px;
+				font-weight: 500;
+				padding-left: 60px;
+				color: #495056;
+			}
+			.list li{
+				display: table;
+				height: 54px;
+				position: relative;
+			}
+			.list li p{
+				float: left;
+				width: 112px;
+				height: 42px;
+				line-height: 42px;
+				font-size: 18px;
+				color: #495053;
+				vertical-align: middle;
+			}
+			input{
+				width: 206px;
+				height: 22px;
+				margin-right: 5px;
+				border: none;
+				border: 1px solid #bec6ce;
+				border-radius: 5px;
+				vertical-align: middle;
+				outline:none;
+				cursor: pointer;
+				padding: 10px 38px 10px 14px;
+			}
+			.list li:nth-of-type(3) input{
+				width: 523px;
+			}
+			.list li:nth-of-type(4) input{
+				width: 523px;
+			}
+			.list li:nth-of-type(5) input{
+				width: 523px;
+			}
+			.HX{
+				line-height: 42px;
+				float: left;
+			}
+			label{
+				display: inline-block;
+				height: 24px;
+				line-height: 24px;
+				font-size: 18px;
+				color: #495056;
+			}
+			span{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				border: 1px solid #22ac38;
+				margin-left: 6px;
+				vertical-align: -3px;
+				margin-right: 80px;
+			}
+			.p{
+				height: 24px;
+				color: white;
+				line-height: 24px;
+			}
+			button{
+				display: block;
+				width: 150px;
+				height: 55px;
+				border: none;
+				font-size: 16px;
+				margin: 0 auto;
+				font-family: "microsoft yahei";
+				background: #3CB46D;
+				border-radius: 4px;
+				-webkit-border-radius: 4px;
+				color: #fff;
+				margin-bottom: 15px;
+			}
+			.footer{
+				height: 40px;
+				line-height: 40px;
+				background-color: #e8f8eb;
+				text-align: center;
+				font-size: 14px;
+				color: #22ac38;
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				z-index: 0;
+				border-radius: 0 0 8px 8px;
+			}
+			.footer2{
+				background: white;
+			}
+			.carBrand{
+				width: 555px;
+				position: absolute;
+				top: 43px;
+				left: 111.5px;
+				border: 1px solid green;
+				z-index: 10;
+				background: white;
+				padding: 0 25px 10px 15px;
+				display: none;
+			}
+			.carBrand li{
+				width: 100%;
+				border-bottom:1px solid gray;
+			}
+			.carCondition{
+				width: 555px;
+				position: absolute;
+				top: 43.5px;
+				left: 112px;
+				display: none;
+				background: white;
+				z-index: 10;
+				border: 1px solid green;
+			}
+			.carCondition li{
+				width: 100%;
+				height: 24px;
+				font-size: 14px;
+				color: #459056;
+				cursor: pointer;
+				line-height: 24px;
+				margin-bottom: 8px;
+			}
+			.carCondition li:hover{
+				background: green;
+				color: white;
+			}
+			.close{
+				width: 35px;
+				height: 35px;
+				text-align: center;
+				line-height: 50px;
+				font-size: 40px;
+				cursor: pointer;
+				border-radius: 50%;
+				background: #D3D3D3 url(X.png) no-repeat center center;
+				background-size: 25px 25px;
+				position: absolute;
+				top: -7px;
+				right: -7px;
+			}
+			.ul{
+				padding: 10px;
+			}
+			.ul_1,.ul_2,.ul3{
+				width: 238px;
+				border: 1px solid green;
+				background: white;
+			}
+			li:nth-of-type(2) input:nth-of-type(1){
+				width: 74px;
+			}
+			li:nth-of-type(2) input:nth-of-type(2){
+				width: 74px;
+			}
+			li:nth-of-type(3) input:nth-of-type(1){
+				width: 206px;
+			}
+			li:nth-of-type(3) input:nth-of-type(2){
+				width: 206px;
+			}
+			.ul_1:nth-of-type(1){
+				position: absolute;
+				top: 43px;
+				left: 112px;
+				display: none;
+				z-index: 10;
+				/* display: block; */
+			}
+			.ul_1:nth-of-type(2){
+				position: absolute;
+				top: 43px;
+				right: 5px;
+				display: none;
+				z-index: 10;
+				/* display: block; */
+			}
+			.ul3:nth-of-type(1){
+				position: absolute;
+				top: 43px;
+				left: 112px;
+				z-index: 10;
+				display: none;
+				/* display: block; */
+			}
+			.ul3:nth-of-type(2){
+				position: absolute;
+				top: 43px;
+				left: 245px;
+				z-index: 10;
+				display: none;
+				/* display: block; */
+			}
+			.ul3:nth-of-type(3){
+				position: absolute;
+				top: 43px;
+				right: 5px;
+				z-index: 10;
+				display: none;
+				/* display: block; */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<button id="btn">弹出</button>
+		<!-- ---------------------高价卖车 ------------------------------>
+		<!-- <div id="smallBox" class="smallBox">
+			<h3>只差2步，多买20%，平均7天成交</h3>
+			<ul class="list">
+				<li>
+					<p>售卖车型</p>
+					<input type="text" placeholder="品牌" class="inp"><input type="text" placeholder="车系" class="inp">
+					<ul class='ul ul_1'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='ul ul_1'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<p>上牌时间</p>
+					<input type="text" placeholder="年份" class="inp"><input type="text" placeholder="月份" class="inp">
+					<ul class='ul ul_1 ul_2'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='ul ul_1 ul_2'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<p>行驶里程</p><input type="text">
+				</li>
+				<li>
+					<p>牌照地</p><input type="text" class="inp">
+					<ul class="carBrand ul">
+						<li>A</li>
+						<li>B</li>
+						<li>C</li>
+					</ul>
+				</li>
+				<li>
+					<p>车况</p><input type="text" class="inp">
+					<ul class="carCondition ul">
+						<li class="li">车况好，无事故且外观无损伤</li>
+						<li class="li">车况正常，无事故但有少量剐蹭钣金</li>
+						<li class="li">车况一般，发生过碰撞事故</li>
+						<li class="li">车辆有重大事故，车身骨架受损（含泡水火烧）</li>
+					</ul>
+				</li>
+				<li>
+					<p>后续需求</p>
+					<div class="HX">
+						<label>买新车</label><span></span>
+						<label>买二手车</label><span></span>
+						<label>无购车计划</label><span></span>
+					</div>
+				</li>
+			</ul>
+			<p class="p">1</p>
+			<button>下一步</button>
+			<div class="footer">
+				关注【瓜子二手车直卖网】微信公众号，实时查看卖车进度
+			</div>
+			<div id="close" class="close"></div>
+		</div> -->
+		<!-- -------------------------估价------------------------ -->
+		<div id="smallBox2" class="smallBox">
+			<h2>先估价再卖车，心里倍儿有底</h2>
+			<ul class="list list2">
+				<li>
+					<p>车源地</p>
+					<input type="text" value="陕西" class="inp"><input type="text" value="西安" class="inp">
+					<ul class='ul ul_1'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='ul ul_1'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<p>车型</p>
+					<input type="text" placeholder="品牌" class="inp"><input type="text" placeholder="车系" class="inp"><input type="text" placeholder="车型" class="inp">
+					<ul class='ul ul3'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='ul ul3'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='ul ul3'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<p>上牌时间</p>
+					<input type="text" placeholder="年份" class="inp"><input type="text" placeholder="月份" class="inp">
+					<ul class='ul ul_1 ul_2'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+					<ul class='ul ul_1 ul_2'>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</li>
+				<li>
+					<p>行驶里程</p><input type="text">
+				</li>
+				<li>
+					<p>接收手机</p><input type="text" placeholder="请输入您的手机号码">
+				</li>
+			</ul>
+			<button>开始估价</button>
+			<div class="footer footer2">
+				免费咨询 400-069-6530
+			</div>
+			<div id="close2" class="close"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+		let oBtn = document.getElementById('btn');
+		let smallBox = document.getElementById('smallBox');
+		let close = document.getElementById('close');
+		// ------------------------显示弹出框
+		oBtn.onclick = function(){
+			smallBox.style.display = "block";
+		}
+		let oInp = document.getElementsByClassName('inp');
+		let oUl = document.getElementsByClassName('ul'); 
+		let flag = true;
+		//----------------------- 设置和清除每一个框的样式
+		for(let i=0;i<oInp.length;i++){
+			oInp[i].onclick = function(){
+				for(let i=0;i<oInp.length;i++){
+					if(oInp[i]==this){
+						if(flag==true){
+							oInp[i].style.border = "1px solid green";
+							oInp[i].style.borderBottomLeftRadius = "0px";
+							oInp[i].style.borderBottomRightRadius = "0px";
+							oUl[i].style.display = "block";
+							flag = false;
+						}else{
+							oInp[i].style.border = "";
+							oUl[i].style.display = "";
+							oInp[i].style.borderBottomLeftRadius = "";
+							oInp[i].style.borderBottomRightRadius = "";
+							flag = true;
+						}
+					}else{
+						oInp[i].style.border = "";
+						oUl[i].style.display = "";
+						oInp[i].style.borderBottomLeftRadius = "";
+						oInp[i].style.borderBottomRightRadius = "";
+					}
+				}
+			}
+		}
+		// ----------------车况信息
+		let oLi = document.getElementsByClassName('li');
+		for(let i=0;i<oLi.length;i++){
+			oLi[i].onclick = function(){
+				let oInput = this.parentNode.previousElementSibling;
+				oInput.value = this.innerHTML;
+				this.parentNode.style.display = "none";
+				oInput.style.border = "";
+				oInput.style.borderBottomLeftRadius = "";
+				oInput.style.borderBottomRightRadius = "";
+			}
+		}
+		// -----------------关闭
+		close.onclick = function(){
+			smallBox.style.display = "none";
+			for(let i=0;i<oInp.length;i++){
+				oInp[i].value = "";
+			}
+		}
+</script>
